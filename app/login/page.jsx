@@ -11,6 +11,11 @@ export default function LoginPage() {
   const [password, setPassword] = useState("");
 
   const handleLogin = () => {
+    if (!email.trim() || !password.trim()) {
+      alert("Please enter your email and password.");
+      return;
+    }
+
     console.log("LOGIN CLICKED");
     const fakeName = "Mrinal";
 
