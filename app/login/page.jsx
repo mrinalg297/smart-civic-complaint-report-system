@@ -19,9 +19,7 @@ export default function LoginPage() {
     console.log("LOGIN CLICKED");
     const fakeName = "Mrinal";
 
-    sessionStorage.setItem("user", JSON.stringify({
-      name: fakeName
-    }));
+    document.cookie = `user=${JSON.stringify({ name: fakeName })}; path=/`;
 
     router.push("/dashboard");
   };

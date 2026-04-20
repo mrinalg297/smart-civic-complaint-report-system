@@ -645,6 +645,12 @@ function SubmitForm({ onSubmit }) {
 }
 
 export default function ComplaintSystem() {
+  useEffect(() => {
+    const match = document.cookie.match(/(?:^|; )user=([^;]*)/);
+    if (!match) {
+      window.location.href = "/login";
+    }
+  }, []);
   const { complaints, addComplaint, toggleUpvote } = useComplaints();
   const stats = useStats(complaints);
   const [activeTab, setActiveTab] = useState("reports");
